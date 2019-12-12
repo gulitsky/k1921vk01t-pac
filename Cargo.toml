@@ -1,0 +1,30 @@
+[package]
+name = "k1921vk01t-pac"
+version = "0.1.0"
+authors = ["Андрей Гулицкий <gulitsky@dux.motorcycles>"]
+build = "build.rs"
+categories = ["embedded", "hardware-support", "no-std"]
+edition = "2018"
+homepage = "https://github.com/dux-motorcycles/k1921vk01t-pac"
+keywords = ["arm", "cortex-m", "niiet", "svd2rust",]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/dux-motorcycles/k1921vk01t-pac"
+description = "API доступа к периферии микроконтроллера НИИЭТ К1921ВК01Т."
+
+[badges]
+is-it-maintained-issue-resolution = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
+is-it-maintained-open-issues = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
+maintenance = { status = "experimental" }
+
+[dependencies]
+bare-metal = "0.2.5"
+cortex-m = "0.5.10"
+vcell = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.11"
+
+[features]
+rt = ["cortex-m-rt/device"]

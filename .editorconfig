@@ -1,0 +1,20 @@
+# Данный файл предназначен для унификации стиля кодирования в различных редакторах и IDE.
+# Подробная информация на https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+indent_size = 2
+indent_style = space
+max_line_length = 120
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{toml,rs}]
+indent_size = 4
+max_line_length = 100
+
+[*.md]
+trim_trailing_whitespace = false

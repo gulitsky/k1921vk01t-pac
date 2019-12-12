@@ -1,0 +1,12 @@
+# Автоопределение и нормализация окончания строк текстовых файлов
+* text=auto
+
+# Игнорировать тесты и документацию при экспорте в архив
+/.github/      export-ignore
+/.vscode/      export-ignore
+/.editorconfig export-ignore
+/.git*         export-ignore
+*.svd          export-ignore
+
+# Не мержить данные файлы
+Cargo.lock -diff
