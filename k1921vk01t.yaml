@@ -1,0 +1,7 @@
+_svd: "./k1921vk01t.svd"
+
+"NT_USBOTG":
+  _add:
+    _interrupts:
+      USBOTG:
+        value: 133
