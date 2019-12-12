@@ -131,4 +131,4 @@ PROVIDE(CAN13 = DefaultHandler);
 PROVIDE(CAN14 = DefaultHandler);
 PROVIDE(CAN15 = DefaultHandler);
 PROVIDE(RTC = DefaultHandler);
-PROVIDER(USBOTG = DefaultHandler);
+PROVIDE(USBOTG = DefaultHandler);
