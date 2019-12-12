@@ -193,114 +193,6 @@ impl<'a> TSEN_W<'a> {
         self.w
     }
 }
-#[doc = "ADC start at a low level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSVAL_A {
-    #[doc = "0: pin C2+ connected as comparator 2 + in"]
-    C2PLUS,
-    #[doc = "1: pin C1+ connected as comparator 2 + in"]
-    C1PLUS,
-    #[doc = "2: DAC 2 out connected as comparator 2 + in"]
-    DAC2,
-    #[doc = "3: DAC 0 out connected as comparator 2 + in"]
-    DAC0,
-}
-impl From<TSVAL_A> for bool {
-    #[inline(always)]
-    fn from(variant: TSVAL_A) -> Self {
-        match variant {
-            TSVAL_A::C2PLUS => false,
-            TSVAL_A::C1PLUS => true,
-            TSVAL_A::DAC2 => true,
-            TSVAL_A::DAC0 => true,
-        }
-    }
-}
-#[doc = "Reader of field `TSVAL`"]
-pub type TSVAL_R = crate::R<bool, TSVAL_A>;
-impl TSVAL_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, TSVAL_A> {
-        use crate::Variant::*;
-        match self.bits {
-            false => Val(TSVAL_A::C2PLUS),
-            true => Val(TSVAL_A::C1PLUS),
-            true => Val(TSVAL_A::DAC2),
-            true => Val(TSVAL_A::DAC0),
-            i => Res(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `C2PLUS`"]
-    #[inline(always)]
-    pub fn is_c2plus(&self) -> bool {
-        *self == TSVAL_A::C2PLUS
-    }
-    #[doc = "Checks if the value of the field is `C1PLUS`"]
-    #[inline(always)]
-    pub fn is_c1plus(&self) -> bool {
-        *self == TSVAL_A::C1PLUS
-    }
-    #[doc = "Checks if the value of the field is `DAC2`"]
-    #[inline(always)]
-    pub fn is_dac2(&self) -> bool {
-        *self == TSVAL_A::DAC2
-    }
-    #[doc = "Checks if the value of the field is `DAC0`"]
-    #[inline(always)]
-    pub fn is_dac0(&self) -> bool {
-        *self == TSVAL_A::DAC0
-    }
-}
-#[doc = "Write proxy for field `TSVAL`"]
-pub struct TSVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSVAL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSVAL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "pin C2+ connected as comparator 2 + in"]
-    #[inline(always)]
-    pub fn c2plus(self) -> &'a mut W {
-        self.variant(TSVAL_A::C2PLUS)
-    }
-    #[doc = "pin C1+ connected as comparator 2 + in"]
-    #[inline(always)]
-    pub fn c1plus(self) -> &'a mut W {
-        self.variant(TSVAL_A::C1PLUS)
-    }
-    #[doc = "DAC 2 out connected as comparator 2 + in"]
-    #[inline(always)]
-    pub fn dac2(self) -> &'a mut W {
-        self.variant(TSVAL_A::DAC2)
-    }
-    #[doc = "DAC 0 out connected as comparator 2 + in"]
-    #[inline(always)]
-    pub fn dac0(self) -> &'a mut W {
-        self.variant(TSVAL_A::DAC0)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASRCP_A {
@@ -448,11 +340,6 @@ impl R {
     pub fn tsen(&self) -> TSEN_R {
         TSEN_R::new(((self.bits >> 5) & 0x03) as u8)
     }
-    #[doc = "Bit 7 - ADC start at a low level"]
-    #[inline(always)]
-    pub fn tsval(&self) -> TSVAL_R {
-        TSVAL_R::new(((self.bits >> 7) & 0x01) != 0)
-    }
     #[doc = "Bits 8:9"]
     #[inline(always)]
     pub fn asrcp(&self) -> ASRCP_R {
@@ -489,11 +376,6 @@ impl W {
     #[inline(always)]
     pub fn tsen(&mut self) -> TSEN_W {
         TSEN_W { w: self }
-    }
-    #[doc = "Bit 7 - ADC start at a low level"]
-    #[inline(always)]
-    pub fn tsval(&mut self) -> TSVAL_W {
-        TSVAL_W { w: self }
     }
     #[doc = "Bits 8:9"]
     #[inline(always)]
