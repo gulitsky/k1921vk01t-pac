@@ -193,30 +193,6 @@ impl<'a> TSEN_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `TSVAL`"]
-pub type TSVAL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TSVAL`"]
-pub struct TSVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSVAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASRCP_A {
@@ -323,6 +299,30 @@ impl<'a> TOEN_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `TSVAL`"]
+pub type TSVAL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TSVAL`"]
+pub struct TSVAL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TSVAL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bit 0 - enable compare 0"]
     #[inline(always)]
@@ -349,11 +349,6 @@ impl R {
     pub fn tsen(&self) -> TSEN_R {
         TSEN_R::new(((self.bits >> 5) & 0x03) as u8)
     }
-    #[doc = "Bit 7 - ADC start at a low level"]
-    #[inline(always)]
-    pub fn tsval(&self) -> TSVAL_R {
-        TSVAL_R::new(((self.bits >> 7) & 0x01) != 0)
-    }
     #[doc = "Bits 8:9"]
     #[inline(always)]
     pub fn asrcp(&self) -> ASRCP_R {
@@ -363,6 +358,11 @@ impl R {
     #[inline(always)]
     pub fn toen(&self) -> TOEN_R {
         TOEN_R::new(((self.bits >> 10) & 0x01) != 0)
+    }
+    #[doc = "Bit 7 - ADC start at a low level"]
+    #[inline(always)]
+    pub fn tsval(&self) -> TSVAL_R {
+        TSVAL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
@@ -391,11 +391,6 @@ impl W {
     pub fn tsen(&mut self) -> TSEN_W {
         TSEN_W { w: self }
     }
-    #[doc = "Bit 7 - ADC start at a low level"]
-    #[inline(always)]
-    pub fn tsval(&mut self) -> TSVAL_W {
-        TSVAL_W { w: self }
-    }
     #[doc = "Bits 8:9"]
     #[inline(always)]
     pub fn asrcp(&mut self) -> ASRCP_W {
@@ -405,5 +400,10 @@ impl W {
     #[inline(always)]
     pub fn toen(&mut self) -> TOEN_W {
         TOEN_W { w: self }
+    }
+    #[doc = "Bit 7 - ADC start at a low level"]
+    #[inline(always)]
+    pub fn tsval(&mut self) -> TSVAL_W {
+        TSVAL_W { w: self }
     }
 }

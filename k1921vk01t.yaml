@@ -1,6 +1,204 @@
+# https://bitbucket.org/niietcm4/k1921vkx_sdk
 _svd: "./k1921vk01t.svd"
 
-"NT_USBOTG":
+# Поле `TSVAL` — однобитовое, но в регистрах `CTL1` и `CTL2` оно объявлено
+# с тремя и четырьмя возможными значениями.
+NT_CMP:
+  CTL*:
+    _delete:
+      - TSVAL
+    _add:
+      TSVAL:
+        description: ADC start at a low level
+        bitRange: "[7:7]"
+        access: read-write
+
+# У периферийных устройство не прописаны прерывания
+NT_WDT:
+  _add:
+    _interrupts:
+      WWDG:
+        value: 0
+
+NT_I2C0:
+  _add:
+    _interrupts:
+      I2C0:
+        value: 1
+
+NT_I2C1:
+  _add:
+    _interrupts:
+      I2C1:
+        value: 2
+
+NT_TIMER0:
+  _add:
+    _interrupts:
+      TIM0:
+        value: 3
+
+NT_TIMER1:
+  _add:
+    _interrupts:
+      TIM1:
+        value: 4
+
+NT_TIMER2:
+  _add:
+    _interrupts:
+      TIM2:
+        value: 5
+
+NT_DMA:
+  _add:
+    _interrupts:
+      DMA_Stream0:
+        value: 6
+      DMA_Stream1:
+        value: 7
+      DMA_Stream2:
+        value: 8
+      DMA_Stream3:
+        value: 9
+      DMA_Stream4:
+        value: 10
+      DMA_Stream5:
+        value: 11
+      DMA_Stream6:
+        value: 12
+      DMA_Stream7:
+        value: 13
+      DMA_Stream8:
+        value: 14
+      DMA_Stream9:
+        value: 15
+      DMA_Stream10:
+        value: 16
+      DMA_Stream11:
+        value: 17
+      DMA_Stream12:
+        value: 18
+      DMA_Stream13:
+        value: 19
+      DMA_Stream14:
+        value: 20
+      DMA_Stream15:
+        value: 21
+      DMA_Stream16:
+        value: 22
+      DMA_Stream17:
+        value: 23
+      DMA_Stream18:
+        value: 24
+      DMA_Stream19:
+        value: 25
+      DMA_Stream20:
+        value: 26
+      DMA_Stream21:
+        value: 27
+      DMA_Stream22:
+        value: 28
+      DMA_Stream23:
+        value: 29
+
+NT_GPIOA:
+  _add:
+    _interrupts:
+      GPIOA:
+        value: 107
+
+NT_GPIOB:
+  _add:
+    _interrupts:
+      GPIOB:
+        value: 108
+
+NT_GPIOC:
+  _add:
+    _interrupts:
+      GPIOC:
+        value: 109
+
+NT_GPIOD:
+  _add:
+    _interrupts:
+      GPIOD:
+        value: 110
+
+NT_GPIOE:
+  _add:
+    _interrupts:
+      GPIOE:
+        value: 111
+
+NT_GPIOF:
+  _add:
+    _interrupts:
+      GPIOF:
+        value: 112
+
+NT_GPIOG:
+  _add:
+    _interrupts:
+      GPIOG:
+        value: 113
+
+NT_GPIOH:
+  _add:
+    _interrupts:
+      GPIOH:
+        value: 114
+
+NT_ETHERNET:
+  _add:
+    _interrupts:
+      Ethernet:
+        value: 115
+
+NT_CAN:
+  _add:
+    _interrupts:
+      CAN0:
+        value: 116
+      CAN1:
+        value: 117
+      CAN2:
+        value: 118
+      CAN3:
+        value: 119
+      CAN4:
+        value: 120
+      CAN5:
+        value: 121
+      CAN6:
+        value: 122
+      CAN7:
+        value: 123
+      CAN8:
+        value: 124
+      CAN9:
+        value: 125
+      CAN10:
+        value: 126
+      CAN11:
+        value: 127
+      CAN12:
+        value: 128
+      CAN13:
+        value: 129
+      CAN14:
+        value: 130
+      CAN15:
+        value: 131
+
+NT_RTC:
+  _add:
+    _interrupts:
+      RTC:
+        value: 132
+
+NT_USBOTG:
   _add:
     _interrupts:
       USBOTG:

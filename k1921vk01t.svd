@@ -23410,7 +23410,6 @@
               </enumeratedValues>
             </field>
             <!-- TSVAL: ADC start at a low level -->
-            <!--
             <field>
               <name>TSVAL</name>
               <description>ADC start at a low level</description>
@@ -23435,7 +23434,6 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
-            -->
             <!-- ASRCP:  -->
             <field>
               <name>ASRCP</name>
@@ -23555,7 +23553,6 @@
               </enumeratedValues>
             </field>
             <!-- TSVAL: ADC start at a low level -->
-            <!--
             <field>
               <name>TSVAL</name>
               <description>ADC start at a low level</description>
@@ -23585,7 +23582,6 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
-            -->
             <!-- ASRCP:  -->
             <field>
               <name>ASRCP</name>
