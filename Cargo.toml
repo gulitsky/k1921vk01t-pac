@@ -13,8 +13,8 @@ repository = "https://github.com/dux-motorcycles/k1921vk01t-pac"
 description = "API доступа к периферии микроконтроллера НИИЭТ К1921ВК01Т."
 
 [badges]
-is-it-maintained-issue-resolution = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
-is-it-maintained-open-issues = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
+# is-it-maintained-issue-resolution = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
+# is-it-maintained-open-issues = { repository = "https://github.com/dux-motorcycles/k1921vk01t-pac" }
 maintenance = { status = "experimental" }
 
 [dependencies]
