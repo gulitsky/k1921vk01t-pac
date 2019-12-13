@@ -44,25 +44,25 @@ extern "C" {
     fn DMA_STREAM21();
     fn DMA_STREAM22();
     fn DMA_STREAM23();
-    fn UART0_MX();
+    fn UART0_MS();
     fn UART0_RX();
     fn UART0_TX();
     fn UART0_RT();
     fn UART0_E();
     fn UART0();
-    fn UART1_MX();
+    fn UART1_MS();
     fn UART1_RX();
     fn UART1_TX();
     fn UART1_RT();
     fn UART1_E();
     fn UART1();
-    fn UART2_MX();
+    fn UART2_MS();
     fn UART2_RX();
     fn UART2_TX();
     fn UART2_RT();
     fn UART2_E();
     fn UART2();
-    fn UART3_MX();
+    fn UART3_MS();
     fn UART3_RX();
     fn UART3_TX();
     fn UART3_RT();
@@ -147,7 +147,7 @@ extern "C" {
     fn CAN14();
     fn CAN15();
     fn RTC();
-    fn USBOTG();
+    fn USB();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -237,25 +237,25 @@ pub static __INTERRUPTS: [Vector; 134] = [
     Vector {
         _handler: DMA_STREAM23,
     },
-    Vector { _handler: UART0_MX },
+    Vector { _handler: UART0_MS },
     Vector { _handler: UART0_RX },
     Vector { _handler: UART0_TX },
     Vector { _handler: UART0_RT },
     Vector { _handler: UART0_E },
     Vector { _handler: UART0 },
-    Vector { _handler: UART1_MX },
+    Vector { _handler: UART1_MS },
     Vector { _handler: UART1_RX },
     Vector { _handler: UART1_TX },
     Vector { _handler: UART1_RT },
     Vector { _handler: UART1_E },
     Vector { _handler: UART1 },
-    Vector { _handler: UART2_MX },
+    Vector { _handler: UART2_MS },
     Vector { _handler: UART2_RX },
     Vector { _handler: UART2_TX },
     Vector { _handler: UART2_RT },
     Vector { _handler: UART2_E },
     Vector { _handler: UART2 },
-    Vector { _handler: UART3_MX },
+    Vector { _handler: UART3_MS },
     Vector { _handler: UART3_RX },
     Vector { _handler: UART3_TX },
     Vector { _handler: UART3_RT },
@@ -346,7 +346,7 @@ pub static __INTERRUPTS: [Vector; 134] = [
     Vector { _handler: CAN14 },
     Vector { _handler: CAN15 },
     Vector { _handler: RTC },
-    Vector { _handler: USBOTG },
+    Vector { _handler: USB },
 ];
 #[doc = r"Enumeration of all the interrupts"]
 #[derive(Copy, Clone, Debug)]
@@ -411,8 +411,8 @@ pub enum Interrupt {
     DMA_STREAM22,
     #[doc = "29 - DMA_Stream23"]
     DMA_STREAM23,
-    #[doc = "30 - UART0_MX"]
-    UART0_MX,
+    #[doc = "30 - UART0_MS"]
+    UART0_MS,
     #[doc = "31 - UART0_RX"]
     UART0_RX,
     #[doc = "32 - UART0_TX"]
@@ -423,8 +423,8 @@ pub enum Interrupt {
     UART0_E,
     #[doc = "35 - UART0"]
     UART0,
-    #[doc = "36 - UART1_MX"]
-    UART1_MX,
+    #[doc = "36 - UART1_MS"]
+    UART1_MS,
     #[doc = "37 - UART1_RX"]
     UART1_RX,
     #[doc = "38 - UART1_TX"]
@@ -435,8 +435,8 @@ pub enum Interrupt {
     UART1_E,
     #[doc = "41 - UART1"]
     UART1,
-    #[doc = "42 - UART2_MX"]
-    UART2_MX,
+    #[doc = "42 - UART2_MS"]
+    UART2_MS,
     #[doc = "43 - UART2_RX"]
     UART2_RX,
     #[doc = "44 - UART2_TX"]
@@ -447,8 +447,8 @@ pub enum Interrupt {
     UART2_E,
     #[doc = "47 - UART2"]
     UART2,
-    #[doc = "48 - UART3_MX"]
-    UART3_MX,
+    #[doc = "48 - UART3_MS"]
+    UART3_MS,
     #[doc = "49 - UART3_RX"]
     UART3_RX,
     #[doc = "50 - UART3_TX"]
@@ -617,8 +617,8 @@ pub enum Interrupt {
     CAN15,
     #[doc = "132 - RTC"]
     RTC,
-    #[doc = "133 - USBOTG"]
-    USBOTG,
+    #[doc = "133 - USB"]
+    USB,
 }
 unsafe impl bare_metal::Nr for Interrupt {
     #[inline]
@@ -654,25 +654,25 @@ unsafe impl bare_metal::Nr for Interrupt {
             Interrupt::DMA_STREAM21 => 27,
             Interrupt::DMA_STREAM22 => 28,
             Interrupt::DMA_STREAM23 => 29,
-            Interrupt::UART0_MX => 30,
+            Interrupt::UART0_MS => 30,
             Interrupt::UART0_RX => 31,
             Interrupt::UART0_TX => 32,
             Interrupt::UART0_RT => 33,
             Interrupt::UART0_E => 34,
             Interrupt::UART0 => 35,
-            Interrupt::UART1_MX => 36,
+            Interrupt::UART1_MS => 36,
             Interrupt::UART1_RX => 37,
             Interrupt::UART1_TX => 38,
             Interrupt::UART1_RT => 39,
             Interrupt::UART1_E => 40,
             Interrupt::UART1 => 41,
-            Interrupt::UART2_MX => 42,
+            Interrupt::UART2_MS => 42,
             Interrupt::UART2_RX => 43,
             Interrupt::UART2_TX => 44,
             Interrupt::UART2_RT => 45,
             Interrupt::UART2_E => 46,
             Interrupt::UART2 => 47,
-            Interrupt::UART3_MX => 48,
+            Interrupt::UART3_MS => 48,
             Interrupt::UART3_RX => 49,
             Interrupt::UART3_TX => 50,
             Interrupt::UART3_RT => 51,
@@ -757,7 +757,7 @@ unsafe impl bare_metal::Nr for Interrupt {
             Interrupt::CAN14 => 130,
             Interrupt::CAN15 => 131,
             Interrupt::RTC => 132,
-            Interrupt::USBOTG => 133,
+            Interrupt::USB => 133,
         }
     }
 }

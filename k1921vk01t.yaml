@@ -1,7 +1,6 @@
 # https://bitbucket.org/niietcm4/k1921vkx_sdk
 _svd: "./k1921vk01t.svd"
 
-
 # У периферийных устройств не прописаны прерывания/
 # `svdtools` не позволяет изменять периферийные устройства, наследуемые с
 # помощью `derivedFrom` (https://github.com/stm32-rs/stm32-rs/pull/170).
@@ -86,7 +85,7 @@ NT_DMA:
 NT_UART0:
   _add:
     _interrupts:
-      UART0_MX:
+      UART0_MS:
         value: 30
       UART0_RX:
         value: 31
@@ -98,7 +97,7 @@ NT_UART0:
         value: 34
       UART0:
         value: 35
-      UART1_MX:
+      UART1_MS:
         value: 36
       UART1_RX:
         value: 37
@@ -110,7 +109,7 @@ NT_UART0:
         value: 40
       UART1:
         value: 41
-      UART2_MX:
+      UART2_MS:
         value: 42
       UART2_RX:
         value: 43
@@ -122,7 +121,7 @@ NT_UART0:
         value: 46
       UART2:
         value: 47
-      UART3_MX:
+      UART3_MS:
         value: 48
       UART3_RX:
         value: 49
@@ -354,5 +353,5 @@ NT_RTC:
 NT_USBOTG:
   _add:
     _interrupts:
-      USBOTG:
+      USB:
         value: 133
