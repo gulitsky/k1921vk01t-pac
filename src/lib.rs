@@ -14,6 +14,139 @@ use core::ops::Deref;
 pub const NVIC_PRIO_BITS: u8 = 3;
 #[cfg(feature = "rt")]
 extern "C" {
+    fn WWDG();
+    fn I2C0();
+    fn I2C1();
+    fn TIM0();
+    fn TIM1();
+    fn TIM2();
+    fn DMA_STREAM0();
+    fn DMA_STREAM1();
+    fn DMA_STREAM2();
+    fn DMA_STREAM3();
+    fn DMA_STREAM4();
+    fn DMA_STREAM5();
+    fn DMA_STREAM6();
+    fn DMA_STREAM7();
+    fn DMA_STREAM8();
+    fn DMA_STREAM9();
+    fn DMA_STREAM10();
+    fn DMA_STREAM11();
+    fn DMA_STREAM12();
+    fn DMA_STREAM13();
+    fn DMA_STREAM14();
+    fn DMA_STREAM15();
+    fn DMA_STREAM16();
+    fn DMA_STREAM17();
+    fn DMA_STREAM18();
+    fn DMA_STREAM19();
+    fn DMA_STREAM20();
+    fn DMA_STREAM21();
+    fn DMA_STREAM22();
+    fn DMA_STREAM23();
+    fn UART0_MX();
+    fn UART0_RX();
+    fn UART0_TX();
+    fn UART0_RT();
+    fn UART0_E();
+    fn UART0();
+    fn UART1_MX();
+    fn UART1_RX();
+    fn UART1_TX();
+    fn UART1_RT();
+    fn UART1_E();
+    fn UART1();
+    fn UART2_MX();
+    fn UART2_RX();
+    fn UART2_TX();
+    fn UART2_RT();
+    fn UART2_E();
+    fn UART2();
+    fn UART3_MX();
+    fn UART3_RX();
+    fn UART3_TX();
+    fn UART3_RT();
+    fn UART3_E();
+    fn UART3();
+    fn PWM0();
+    fn PWM0_HD();
+    fn PWM0_TZ();
+    fn PWM1();
+    fn PWM1_HD();
+    fn PWM1_TZ();
+    fn PWM2();
+    fn PWM2_HD();
+    fn PWM2_TZ();
+    fn PWM3();
+    fn PWM3_HD();
+    fn PWM3_TZ();
+    fn PWM4();
+    fn PWM4_HD();
+    fn PWM4_TZ();
+    fn PWM5();
+    fn PWM5_HD();
+    fn PWM5_TZ();
+    fn PWM6();
+    fn PWM6_HD();
+    fn PWM6_TZ();
+    fn PWM7();
+    fn PWM7_HD();
+    fn PWM7_TZ();
+    fn PWM8();
+    fn PWM8_HD();
+    fn PWM8_TZ();
+    fn ADC_SEQ0();
+    fn ADC_SEQ1();
+    fn ADC_SEQ2();
+    fn ADC_SEQ3();
+    fn ADC_SEQ4();
+    fn ADC_SEQ5();
+    fn ADC_SEQ6();
+    fn ADC_SEQ7();
+    fn ADC_COMPINT();
+    fn CAP0();
+    fn CAP1();
+    fn CAP2();
+    fn CAP3();
+    fn CAP4();
+    fn CAP5();
+    fn QEP0();
+    fn QEP1();
+    fn BOOTFLASH();
+    fn CMP0();
+    fn CMP1();
+    fn CMP2();
+    fn SPI0();
+    fn SPI1();
+    fn SPI2();
+    fn SPI3();
+    fn USERFLASH();
+    fn GPIOA();
+    fn GPIOB();
+    fn GPIOC();
+    fn GPIOD();
+    fn GPIOE();
+    fn GPIOF();
+    fn GPIOG();
+    fn GPIOH();
+    fn ETHERNET();
+    fn CAN0();
+    fn CAN1();
+    fn CAN2();
+    fn CAN3();
+    fn CAN4();
+    fn CAN5();
+    fn CAN6();
+    fn CAN7();
+    fn CAN8();
+    fn CAN9();
+    fn CAN10();
+    fn CAN11();
+    fn CAN12();
+    fn CAN13();
+    fn CAN14();
+    fn CAN15();
+    fn RTC();
     fn USBOTG();
 }
 #[doc(hidden)]
@@ -26,144 +159,464 @@ pub union Vector {
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
 pub static __INTERRUPTS: [Vector; 134] = [
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: WWDG },
+    Vector { _handler: I2C0 },
+    Vector { _handler: I2C1 },
+    Vector { _handler: TIM0 },
+    Vector { _handler: TIM1 },
+    Vector { _handler: TIM2 },
+    Vector {
+        _handler: DMA_STREAM0,
+    },
+    Vector {
+        _handler: DMA_STREAM1,
+    },
+    Vector {
+        _handler: DMA_STREAM2,
+    },
+    Vector {
+        _handler: DMA_STREAM3,
+    },
+    Vector {
+        _handler: DMA_STREAM4,
+    },
+    Vector {
+        _handler: DMA_STREAM5,
+    },
+    Vector {
+        _handler: DMA_STREAM6,
+    },
+    Vector {
+        _handler: DMA_STREAM7,
+    },
+    Vector {
+        _handler: DMA_STREAM8,
+    },
+    Vector {
+        _handler: DMA_STREAM9,
+    },
+    Vector {
+        _handler: DMA_STREAM10,
+    },
+    Vector {
+        _handler: DMA_STREAM11,
+    },
+    Vector {
+        _handler: DMA_STREAM12,
+    },
+    Vector {
+        _handler: DMA_STREAM13,
+    },
+    Vector {
+        _handler: DMA_STREAM14,
+    },
+    Vector {
+        _handler: DMA_STREAM15,
+    },
+    Vector {
+        _handler: DMA_STREAM16,
+    },
+    Vector {
+        _handler: DMA_STREAM17,
+    },
+    Vector {
+        _handler: DMA_STREAM18,
+    },
+    Vector {
+        _handler: DMA_STREAM19,
+    },
+    Vector {
+        _handler: DMA_STREAM20,
+    },
+    Vector {
+        _handler: DMA_STREAM21,
+    },
+    Vector {
+        _handler: DMA_STREAM22,
+    },
+    Vector {
+        _handler: DMA_STREAM23,
+    },
+    Vector { _handler: UART0_MX },
+    Vector { _handler: UART0_RX },
+    Vector { _handler: UART0_TX },
+    Vector { _handler: UART0_RT },
+    Vector { _handler: UART0_E },
+    Vector { _handler: UART0 },
+    Vector { _handler: UART1_MX },
+    Vector { _handler: UART1_RX },
+    Vector { _handler: UART1_TX },
+    Vector { _handler: UART1_RT },
+    Vector { _handler: UART1_E },
+    Vector { _handler: UART1 },
+    Vector { _handler: UART2_MX },
+    Vector { _handler: UART2_RX },
+    Vector { _handler: UART2_TX },
+    Vector { _handler: UART2_RT },
+    Vector { _handler: UART2_E },
+    Vector { _handler: UART2 },
+    Vector { _handler: UART3_MX },
+    Vector { _handler: UART3_RX },
+    Vector { _handler: UART3_TX },
+    Vector { _handler: UART3_RT },
+    Vector { _handler: UART3_E },
+    Vector { _handler: UART3 },
+    Vector { _handler: PWM0 },
+    Vector { _handler: PWM0_HD },
+    Vector { _handler: PWM0_TZ },
+    Vector { _handler: PWM1 },
+    Vector { _handler: PWM1_HD },
+    Vector { _handler: PWM1_TZ },
+    Vector { _handler: PWM2 },
+    Vector { _handler: PWM2_HD },
+    Vector { _handler: PWM2_TZ },
+    Vector { _handler: PWM3 },
+    Vector { _handler: PWM3_HD },
+    Vector { _handler: PWM3_TZ },
+    Vector { _handler: PWM4 },
+    Vector { _handler: PWM4_HD },
+    Vector { _handler: PWM4_TZ },
+    Vector { _handler: PWM5 },
+    Vector { _handler: PWM5_HD },
+    Vector { _handler: PWM5_TZ },
+    Vector { _handler: PWM6 },
+    Vector { _handler: PWM6_HD },
+    Vector { _handler: PWM6_TZ },
+    Vector { _handler: PWM7 },
+    Vector { _handler: PWM7_HD },
+    Vector { _handler: PWM7_TZ },
+    Vector { _handler: PWM8 },
+    Vector { _handler: PWM8_HD },
+    Vector { _handler: PWM8_TZ },
+    Vector { _handler: ADC_SEQ0 },
+    Vector { _handler: ADC_SEQ1 },
+    Vector { _handler: ADC_SEQ2 },
+    Vector { _handler: ADC_SEQ3 },
+    Vector { _handler: ADC_SEQ4 },
+    Vector { _handler: ADC_SEQ5 },
+    Vector { _handler: ADC_SEQ6 },
+    Vector { _handler: ADC_SEQ7 },
+    Vector {
+        _handler: ADC_COMPINT,
+    },
+    Vector { _handler: CAP0 },
+    Vector { _handler: CAP1 },
+    Vector { _handler: CAP2 },
+    Vector { _handler: CAP3 },
+    Vector { _handler: CAP4 },
+    Vector { _handler: CAP5 },
+    Vector { _handler: QEP0 },
+    Vector { _handler: QEP1 },
+    Vector {
+        _handler: BOOTFLASH,
+    },
+    Vector { _handler: CMP0 },
+    Vector { _handler: CMP1 },
+    Vector { _handler: CMP2 },
+    Vector { _handler: SPI0 },
+    Vector { _handler: SPI1 },
+    Vector { _handler: SPI2 },
+    Vector { _handler: SPI3 },
+    Vector {
+        _handler: USERFLASH,
+    },
+    Vector { _handler: GPIOA },
+    Vector { _handler: GPIOB },
+    Vector { _handler: GPIOC },
+    Vector { _handler: GPIOD },
+    Vector { _handler: GPIOE },
+    Vector { _handler: GPIOF },
+    Vector { _handler: GPIOG },
+    Vector { _handler: GPIOH },
+    Vector { _handler: ETHERNET },
+    Vector { _handler: CAN0 },
+    Vector { _handler: CAN1 },
+    Vector { _handler: CAN2 },
+    Vector { _handler: CAN3 },
+    Vector { _handler: CAN4 },
+    Vector { _handler: CAN5 },
+    Vector { _handler: CAN6 },
+    Vector { _handler: CAN7 },
+    Vector { _handler: CAN8 },
+    Vector { _handler: CAN9 },
+    Vector { _handler: CAN10 },
+    Vector { _handler: CAN11 },
+    Vector { _handler: CAN12 },
+    Vector { _handler: CAN13 },
+    Vector { _handler: CAN14 },
+    Vector { _handler: CAN15 },
+    Vector { _handler: RTC },
     Vector { _handler: USBOTG },
 ];
 #[doc = r"Enumeration of all the interrupts"]
 #[derive(Copy, Clone, Debug)]
 pub enum Interrupt {
+    #[doc = "0 - WWDG"]
+    WWDG,
+    #[doc = "1 - I2C0"]
+    I2C0,
+    #[doc = "2 - I2C1"]
+    I2C1,
+    #[doc = "3 - TIM0"]
+    TIM0,
+    #[doc = "4 - TIM1"]
+    TIM1,
+    #[doc = "5 - TIM2"]
+    TIM2,
+    #[doc = "6 - DMA_Stream0"]
+    DMA_STREAM0,
+    #[doc = "7 - DMA_Stream1"]
+    DMA_STREAM1,
+    #[doc = "8 - DMA_Stream2"]
+    DMA_STREAM2,
+    #[doc = "9 - DMA_Stream3"]
+    DMA_STREAM3,
+    #[doc = "10 - DMA_Stream4"]
+    DMA_STREAM4,
+    #[doc = "11 - DMA_Stream5"]
+    DMA_STREAM5,
+    #[doc = "12 - DMA_Stream6"]
+    DMA_STREAM6,
+    #[doc = "13 - DMA_Stream7"]
+    DMA_STREAM7,
+    #[doc = "14 - DMA_Stream8"]
+    DMA_STREAM8,
+    #[doc = "15 - DMA_Stream9"]
+    DMA_STREAM9,
+    #[doc = "16 - DMA_Stream10"]
+    DMA_STREAM10,
+    #[doc = "17 - DMA_Stream11"]
+    DMA_STREAM11,
+    #[doc = "18 - DMA_Stream12"]
+    DMA_STREAM12,
+    #[doc = "19 - DMA_Stream13"]
+    DMA_STREAM13,
+    #[doc = "20 - DMA_Stream14"]
+    DMA_STREAM14,
+    #[doc = "21 - DMA_Stream15"]
+    DMA_STREAM15,
+    #[doc = "22 - DMA_Stream16"]
+    DMA_STREAM16,
+    #[doc = "23 - DMA_Stream17"]
+    DMA_STREAM17,
+    #[doc = "24 - DMA_Stream18"]
+    DMA_STREAM18,
+    #[doc = "25 - DMA_Stream19"]
+    DMA_STREAM19,
+    #[doc = "26 - DMA_Stream20"]
+    DMA_STREAM20,
+    #[doc = "27 - DMA_Stream21"]
+    DMA_STREAM21,
+    #[doc = "28 - DMA_Stream22"]
+    DMA_STREAM22,
+    #[doc = "29 - DMA_Stream23"]
+    DMA_STREAM23,
+    #[doc = "30 - UART0_MX"]
+    UART0_MX,
+    #[doc = "31 - UART0_RX"]
+    UART0_RX,
+    #[doc = "32 - UART0_TX"]
+    UART0_TX,
+    #[doc = "33 - UART0_RT"]
+    UART0_RT,
+    #[doc = "34 - UART0_E"]
+    UART0_E,
+    #[doc = "35 - UART0"]
+    UART0,
+    #[doc = "36 - UART1_MX"]
+    UART1_MX,
+    #[doc = "37 - UART1_RX"]
+    UART1_RX,
+    #[doc = "38 - UART1_TX"]
+    UART1_TX,
+    #[doc = "39 - UART1_RT"]
+    UART1_RT,
+    #[doc = "40 - UART1_E"]
+    UART1_E,
+    #[doc = "41 - UART1"]
+    UART1,
+    #[doc = "42 - UART2_MX"]
+    UART2_MX,
+    #[doc = "43 - UART2_RX"]
+    UART2_RX,
+    #[doc = "44 - UART2_TX"]
+    UART2_TX,
+    #[doc = "45 - UART2_RT"]
+    UART2_RT,
+    #[doc = "46 - UART2_E"]
+    UART2_E,
+    #[doc = "47 - UART2"]
+    UART2,
+    #[doc = "48 - UART3_MX"]
+    UART3_MX,
+    #[doc = "49 - UART3_RX"]
+    UART3_RX,
+    #[doc = "50 - UART3_TX"]
+    UART3_TX,
+    #[doc = "51 - UART3_RT"]
+    UART3_RT,
+    #[doc = "52 - UART3_E"]
+    UART3_E,
+    #[doc = "53 - UART3"]
+    UART3,
+    #[doc = "54 - PWM0"]
+    PWM0,
+    #[doc = "55 - PWM0_HD"]
+    PWM0_HD,
+    #[doc = "56 - PWM0_TZ"]
+    PWM0_TZ,
+    #[doc = "57 - PWM1"]
+    PWM1,
+    #[doc = "58 - PWM1_HD"]
+    PWM1_HD,
+    #[doc = "59 - PWM1_TZ"]
+    PWM1_TZ,
+    #[doc = "60 - PWM2"]
+    PWM2,
+    #[doc = "61 - PWM2_HD"]
+    PWM2_HD,
+    #[doc = "62 - PWM2_TZ"]
+    PWM2_TZ,
+    #[doc = "63 - PWM3"]
+    PWM3,
+    #[doc = "64 - PWM3_HD"]
+    PWM3_HD,
+    #[doc = "65 - PWM3_TZ"]
+    PWM3_TZ,
+    #[doc = "66 - PWM4"]
+    PWM4,
+    #[doc = "67 - PWM4_HD"]
+    PWM4_HD,
+    #[doc = "68 - PWM4_TZ"]
+    PWM4_TZ,
+    #[doc = "69 - PWM5"]
+    PWM5,
+    #[doc = "70 - PWM5_HD"]
+    PWM5_HD,
+    #[doc = "71 - PWM5_TZ"]
+    PWM5_TZ,
+    #[doc = "72 - PWM6"]
+    PWM6,
+    #[doc = "73 - PWM6_HD"]
+    PWM6_HD,
+    #[doc = "74 - PWM6_TZ"]
+    PWM6_TZ,
+    #[doc = "75 - PWM7"]
+    PWM7,
+    #[doc = "76 - PWM7_HD"]
+    PWM7_HD,
+    #[doc = "77 - PWM7_TZ"]
+    PWM7_TZ,
+    #[doc = "78 - PWM8"]
+    PWM8,
+    #[doc = "79 - PWM8_HD"]
+    PWM8_HD,
+    #[doc = "80 - PWM8_TZ"]
+    PWM8_TZ,
+    #[doc = "81 - ADC_SEQ0"]
+    ADC_SEQ0,
+    #[doc = "82 - ADC_SEQ1"]
+    ADC_SEQ1,
+    #[doc = "83 - ADC_SEQ2"]
+    ADC_SEQ2,
+    #[doc = "84 - ADC_SEQ3"]
+    ADC_SEQ3,
+    #[doc = "85 - ADC_SEQ4"]
+    ADC_SEQ4,
+    #[doc = "86 - ADC_SEQ5"]
+    ADC_SEQ5,
+    #[doc = "87 - ADC_SEQ6"]
+    ADC_SEQ6,
+    #[doc = "88 - ADC_SEQ7"]
+    ADC_SEQ7,
+    #[doc = "89 - ADC_CompInt"]
+    ADC_COMPINT,
+    #[doc = "90 - CAP0"]
+    CAP0,
+    #[doc = "91 - CAP1"]
+    CAP1,
+    #[doc = "92 - CAP2"]
+    CAP2,
+    #[doc = "93 - CAP3"]
+    CAP3,
+    #[doc = "94 - CAP4"]
+    CAP4,
+    #[doc = "95 - CAP5"]
+    CAP5,
+    #[doc = "96 - QEP0"]
+    QEP0,
+    #[doc = "97 - QEP1"]
+    QEP1,
+    #[doc = "98 - BootFlash"]
+    BOOTFLASH,
+    #[doc = "99 - CMP0"]
+    CMP0,
+    #[doc = "100 - CMP1"]
+    CMP1,
+    #[doc = "101 - CMP2"]
+    CMP2,
+    #[doc = "102 - SPI0"]
+    SPI0,
+    #[doc = "103 - SPI1"]
+    SPI1,
+    #[doc = "104 - SPI2"]
+    SPI2,
+    #[doc = "105 - SPI3"]
+    SPI3,
+    #[doc = "106 - UserFlash"]
+    USERFLASH,
+    #[doc = "107 - GPIOA"]
+    GPIOA,
+    #[doc = "108 - GPIOB"]
+    GPIOB,
+    #[doc = "109 - GPIOC"]
+    GPIOC,
+    #[doc = "110 - GPIOD"]
+    GPIOD,
+    #[doc = "111 - GPIOE"]
+    GPIOE,
+    #[doc = "112 - GPIOF"]
+    GPIOF,
+    #[doc = "113 - GPIOG"]
+    GPIOG,
+    #[doc = "114 - GPIOH"]
+    GPIOH,
+    #[doc = "115 - Ethernet"]
+    ETHERNET,
+    #[doc = "116 - CAN0"]
+    CAN0,
+    #[doc = "117 - CAN1"]
+    CAN1,
+    #[doc = "118 - CAN2"]
+    CAN2,
+    #[doc = "119 - CAN3"]
+    CAN3,
+    #[doc = "120 - CAN4"]
+    CAN4,
+    #[doc = "121 - CAN5"]
+    CAN5,
+    #[doc = "122 - CAN6"]
+    CAN6,
+    #[doc = "123 - CAN7"]
+    CAN7,
+    #[doc = "124 - CAN8"]
+    CAN8,
+    #[doc = "125 - CAN9"]
+    CAN9,
+    #[doc = "126 - CAN10"]
+    CAN10,
+    #[doc = "127 - CAN11"]
+    CAN11,
+    #[doc = "128 - CAN12"]
+    CAN12,
+    #[doc = "129 - CAN13"]
+    CAN13,
+    #[doc = "130 - CAN14"]
+    CAN14,
+    #[doc = "131 - CAN15"]
+    CAN15,
+    #[doc = "132 - RTC"]
+    RTC,
     #[doc = "133 - USBOTG"]
     USBOTG,
 }
@@ -171,6 +624,139 @@ unsafe impl bare_metal::Nr for Interrupt {
     #[inline]
     fn nr(&self) -> u8 {
         match *self {
+            Interrupt::WWDG => 0,
+            Interrupt::I2C0 => 1,
+            Interrupt::I2C1 => 2,
+            Interrupt::TIM0 => 3,
+            Interrupt::TIM1 => 4,
+            Interrupt::TIM2 => 5,
+            Interrupt::DMA_STREAM0 => 6,
+            Interrupt::DMA_STREAM1 => 7,
+            Interrupt::DMA_STREAM2 => 8,
+            Interrupt::DMA_STREAM3 => 9,
+            Interrupt::DMA_STREAM4 => 10,
+            Interrupt::DMA_STREAM5 => 11,
+            Interrupt::DMA_STREAM6 => 12,
+            Interrupt::DMA_STREAM7 => 13,
+            Interrupt::DMA_STREAM8 => 14,
+            Interrupt::DMA_STREAM9 => 15,
+            Interrupt::DMA_STREAM10 => 16,
+            Interrupt::DMA_STREAM11 => 17,
+            Interrupt::DMA_STREAM12 => 18,
+            Interrupt::DMA_STREAM13 => 19,
+            Interrupt::DMA_STREAM14 => 20,
+            Interrupt::DMA_STREAM15 => 21,
+            Interrupt::DMA_STREAM16 => 22,
+            Interrupt::DMA_STREAM17 => 23,
+            Interrupt::DMA_STREAM18 => 24,
+            Interrupt::DMA_STREAM19 => 25,
+            Interrupt::DMA_STREAM20 => 26,
+            Interrupt::DMA_STREAM21 => 27,
+            Interrupt::DMA_STREAM22 => 28,
+            Interrupt::DMA_STREAM23 => 29,
+            Interrupt::UART0_MX => 30,
+            Interrupt::UART0_RX => 31,
+            Interrupt::UART0_TX => 32,
+            Interrupt::UART0_RT => 33,
+            Interrupt::UART0_E => 34,
+            Interrupt::UART0 => 35,
+            Interrupt::UART1_MX => 36,
+            Interrupt::UART1_RX => 37,
+            Interrupt::UART1_TX => 38,
+            Interrupt::UART1_RT => 39,
+            Interrupt::UART1_E => 40,
+            Interrupt::UART1 => 41,
+            Interrupt::UART2_MX => 42,
+            Interrupt::UART2_RX => 43,
+            Interrupt::UART2_TX => 44,
+            Interrupt::UART2_RT => 45,
+            Interrupt::UART2_E => 46,
+            Interrupt::UART2 => 47,
+            Interrupt::UART3_MX => 48,
+            Interrupt::UART3_RX => 49,
+            Interrupt::UART3_TX => 50,
+            Interrupt::UART3_RT => 51,
+            Interrupt::UART3_E => 52,
+            Interrupt::UART3 => 53,
+            Interrupt::PWM0 => 54,
+            Interrupt::PWM0_HD => 55,
+            Interrupt::PWM0_TZ => 56,
+            Interrupt::PWM1 => 57,
+            Interrupt::PWM1_HD => 58,
+            Interrupt::PWM1_TZ => 59,
+            Interrupt::PWM2 => 60,
+            Interrupt::PWM2_HD => 61,
+            Interrupt::PWM2_TZ => 62,
+            Interrupt::PWM3 => 63,
+            Interrupt::PWM3_HD => 64,
+            Interrupt::PWM3_TZ => 65,
+            Interrupt::PWM4 => 66,
+            Interrupt::PWM4_HD => 67,
+            Interrupt::PWM4_TZ => 68,
+            Interrupt::PWM5 => 69,
+            Interrupt::PWM5_HD => 70,
+            Interrupt::PWM5_TZ => 71,
+            Interrupt::PWM6 => 72,
+            Interrupt::PWM6_HD => 73,
+            Interrupt::PWM6_TZ => 74,
+            Interrupt::PWM7 => 75,
+            Interrupt::PWM7_HD => 76,
+            Interrupt::PWM7_TZ => 77,
+            Interrupt::PWM8 => 78,
+            Interrupt::PWM8_HD => 79,
+            Interrupt::PWM8_TZ => 80,
+            Interrupt::ADC_SEQ0 => 81,
+            Interrupt::ADC_SEQ1 => 82,
+            Interrupt::ADC_SEQ2 => 83,
+            Interrupt::ADC_SEQ3 => 84,
+            Interrupt::ADC_SEQ4 => 85,
+            Interrupt::ADC_SEQ5 => 86,
+            Interrupt::ADC_SEQ6 => 87,
+            Interrupt::ADC_SEQ7 => 88,
+            Interrupt::ADC_COMPINT => 89,
+            Interrupt::CAP0 => 90,
+            Interrupt::CAP1 => 91,
+            Interrupt::CAP2 => 92,
+            Interrupt::CAP3 => 93,
+            Interrupt::CAP4 => 94,
+            Interrupt::CAP5 => 95,
+            Interrupt::QEP0 => 96,
+            Interrupt::QEP1 => 97,
+            Interrupt::BOOTFLASH => 98,
+            Interrupt::CMP0 => 99,
+            Interrupt::CMP1 => 100,
+            Interrupt::CMP2 => 101,
+            Interrupt::SPI0 => 102,
+            Interrupt::SPI1 => 103,
+            Interrupt::SPI2 => 104,
+            Interrupt::SPI3 => 105,
+            Interrupt::USERFLASH => 106,
+            Interrupt::GPIOA => 107,
+            Interrupt::GPIOB => 108,
+            Interrupt::GPIOC => 109,
+            Interrupt::GPIOD => 110,
+            Interrupt::GPIOE => 111,
+            Interrupt::GPIOF => 112,
+            Interrupt::GPIOG => 113,
+            Interrupt::GPIOH => 114,
+            Interrupt::ETHERNET => 115,
+            Interrupt::CAN0 => 116,
+            Interrupt::CAN1 => 117,
+            Interrupt::CAN2 => 118,
+            Interrupt::CAN3 => 119,
+            Interrupt::CAN4 => 120,
+            Interrupt::CAN5 => 121,
+            Interrupt::CAN6 => 122,
+            Interrupt::CAN7 => 123,
+            Interrupt::CAN8 => 124,
+            Interrupt::CAN9 => 125,
+            Interrupt::CAN10 => 126,
+            Interrupt::CAN11 => 127,
+            Interrupt::CAN12 => 128,
+            Interrupt::CAN13 => 129,
+            Interrupt::CAN14 => 130,
+            Interrupt::CAN15 => 131,
+            Interrupt::RTC => 132,
             Interrupt::USBOTG => 133,
         }
     }
