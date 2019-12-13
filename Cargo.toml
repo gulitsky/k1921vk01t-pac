@@ -1,6 +1,6 @@
 [package]
 name = "k1921vk01t-pac"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Андрей Гулицкий <gulitsky@dux.motorcycles>"]
 build = "build.rs"
 categories = ["embedded", "hardware-support", "no-std"]
